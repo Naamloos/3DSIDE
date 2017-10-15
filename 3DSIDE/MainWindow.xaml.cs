@@ -70,7 +70,7 @@ namespace _3DSIDE
 
         public static void ShowOpenWithDialog(string path)
         {
-            var args = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "shell32.dll");
+            var args = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "shell32.dll");
             args += ",OpenAs_RunDLL " + path;
             Process.Start("rundll32.exe", args);
         }
@@ -107,7 +107,7 @@ namespace _3DSIDE
                 if (!item.Contains("<"))
                 {
                     CurrentFilePath = Directory.GetCurrentDirectory() + item;
-                    if (Extensions.Contains(System.IO.Path.GetEx‌​tension(Directory.GetCurrentDirectory() + item)))
+                    if (Extensions.Contains(Path.GetEx‌​tension(Directory.GetCurrentDirectory() + item)))
                         textEditor.Text = File.ReadAllText(Directory.GetCurrentDirectory() + item);
                     else
                     {
@@ -116,7 +116,7 @@ namespace _3DSIDE
                     }
                     try
                     {
-                        textEditor.SyntaxHighlighting = ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Inst‌​ance.GetDefinitionBy‌​Extension(System.IO.Path.GetEx‌​tension(CurrentFilePath));
+                        textEditor.SyntaxHighlighting = ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Inst‌​ance.GetDefinitionBy‌​Extension(Path.GetEx‌​tension(CurrentFilePath));
                     }
                     catch (Exception)
                     {

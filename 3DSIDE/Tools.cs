@@ -12,7 +12,7 @@ namespace _3DSIDE
     {
         public static void GenerateExampleProject(string path)
         {
-            System.IO.DirectoryInfo di = new DirectoryInfo(path);
+            DirectoryInfo di = new DirectoryInfo(path);
             foreach (FileInfo file in di.GetFiles())
             {
                 file.Delete();
