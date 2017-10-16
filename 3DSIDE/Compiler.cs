@@ -13,7 +13,7 @@ namespace _3DSIDE
         public static void Make3DSX(string makefilepath)
         {
             Directory.SetCurrentDirectory(makefilepath);
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            Process process = new Process();
             process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             process.StartInfo.FileName = "cmd.exe";
             process.StartInfo.Arguments = "/C make";
@@ -25,7 +25,7 @@ namespace _3DSIDE
         public static void MakeClean(string makefilepath)
         {
             Directory.SetCurrentDirectory(makefilepath);
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            Process process = new Process();
             process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             process.StartInfo.FileName = "cmd.exe";
             process.StartInfo.Arguments = "/C make clean";
